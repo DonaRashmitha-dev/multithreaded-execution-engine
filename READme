@@ -1,0 +1,88 @@
+# 🚀 Multithreaded Execution Engine (C++)
+
+## 📌 Overview
+
+This project is a **high-performance multithreaded execution engine** built in C++. It demonstrates advanced concurrency concepts such as **thread pools, synchronization, priority scheduling, and backpressure handling**.
+
+The system efficiently executes multiple tasks in parallel while ensuring **thread safety, performance, and scalability**.
+
+---
+
+## ⚙️ Features
+
+* 🔥 Thread Pool for efficient task execution
+* ⚡ Priority-based task scheduling
+* 🔒 Thread-safe queue using mutex and condition variables
+* 🚦 Backpressure handling (bounded queue)
+* 🧵 Asynchronous logging system
+* 📊 Task execution metrics
+* 🛑 Graceful shutdown of threads
+* 🧠 Starvation mitigation using task aging
+
+---
+
+## 🧠 System Architecture
+
+Tasks are submitted to a priority queue and executed by worker threads:
+
+```
+Tasks → Priority Queue → Thread Pool → Execution
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* C++
+* Multithreading (`std::thread`)
+* Synchronization (`std::mutex`, `std::condition_variable`)
+* STL (`priority_queue`, `vector`, etc.)
+
+---
+
+## 🚀 How to Run
+
+### 1. Compile
+
+```bash
+g++ -std=c++17 main.cpp thread_pool.cpp -o engine -pthread
+```
+
+### 2. Run
+
+```bash
+./engine
+```
+
+---
+
+
+---
+
+## ⚠️ Design Decisions
+
+* Used **mutex + condition variables** instead of lock-free structures for correctness and maintainability
+* Implemented **bounded queue** to prevent memory overflow
+* Designed **async logging** to avoid blocking worker threads
+
+---
+
+## 🚧 Future Improvements
+
+* Distributed task queue (Kafka / RabbitMQ)
+* Retry and fault-tolerance mechanisms
+* Monitoring dashboard (Prometheus + Grafana)
+* Lock-free data structures for ultra-low latency
+
+---
+
+## 🎯 Learning Outcomes
+
+* Deep understanding of concurrency and synchronization
+* Real-world thread pool design
+* Handling race conditions and performance trade-offs
+* System design thinking for scalable architectures
+
+## 📸 Output
+
+![Execution Output](assets/output.png)
